@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="main.js"></script>
+</head>
+<style>
+    body {
+        width: 60%;
+        margin: auto;
+    }
+    .tarolo {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+    }
+    .kerdes {
+        border: 1px solid black;
+        padding: 20px;
+    }
+    @media screen and (max-width: 880px) {
+        .tarolo {
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+    }
+    @media screen and (max-width: 600px) {
+        .tarolo {
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+    }
+    }
+</style>
+<body>
+    <div class="pontszam">Pontszám: 0</div>
+    <div class="tarolo">
+
+    </div>
+
+</body>
+</html>
