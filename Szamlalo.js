@@ -1,15 +1,26 @@
 export default class Szamlalo {
     #ertek;
-    constructor(ertek2) {
-        this.#ertek = this.ertek;
-        this.megjelenit(ertek2);
+    #szuloElem;
+    
+    constructor(szuloElem, kezdoErtek = 0) {
+        this.#ertek = kezdoErtek;
+        this.#szuloElem = szuloElem;
+        this.megjelenit();
+        this.esemenyTrigger();
     }
 
+    esemenyTrigger() {
+        window.addEventListener("kerdesValasz", () => {
+            this.novel();
+        });
+    }
 
-    megjelenit(ertek2) {
-        let html = `
-        <p>Pontszám: ${this.#ertek+1}</p>
-        
-        `;
+    novel() {
+        this.#ertek++;
+        this.megjelenit();
+    }
+
+    megjelenit() {
+        this.#szuloElem.innerHTML = `Pontszám: ${this.#ertek}`;
     }
 }

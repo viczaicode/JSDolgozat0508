@@ -24,10 +24,10 @@ export default class Kerdes {
 
     esemenykezelo() {
         this.#gomb.addEventListener("click", ()=> {
-
             window.dispatchEvent(new CustomEvent("kivalaszt", {detail:this.#obj}));
             this.ellenoriz();
-
+            // Always increment counter when OK button is clicked
+            window.dispatchEvent(new CustomEvent("kerdesValasz"));
         });
     }
 
@@ -35,7 +35,7 @@ export default class Kerdes {
         
         let html=`
             <div class="kerdes">
-                <p>${this.#obj.mondat} (${this.#obj.alap})</p>
+                <p>${this.#obj.mondat} <b>(${this.#obj.alap})</b></p>
                 <input>
                 <button>OK</button>
         `;
